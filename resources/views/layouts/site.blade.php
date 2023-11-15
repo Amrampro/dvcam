@@ -53,10 +53,12 @@
                     </div>
                     <div class="col-sm-4 d-none d-md-block">
                         <ul class="right-info">
-                            <li><a href="https://www.facebook.com/profile.php?id=100071841758639"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100071841758639"><i
+                                        class="fa fa-facebook"></i></a></li>
                             <li><a href="https://x.com/CDefendre90002?s=20"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.pinterest.com/DVCAM237"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://instagram.com/defendrecest?igshid=MzNlNGNkZWQ4Mg"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://instagram.com/defendrecest?igshid=MzNlNGNkZWQ4Mg"><i
+                                        class="fa fa-instagram"></i></a></li>
                             {{-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
                         </ul>
                     </div>
@@ -68,7 +70,9 @@
                 <div class="bottom-content-wrap row">
                     <div class="col-sm-4">
                         <div class="site-branding">
-                            <a href="#"><img src="{{ asset('site') }}/img/logo.png" alt="Brand"></a>
+                            {{-- <a href="#"><img src="{{ asset('site') }}/img/logo.png" alt="Brand"></a> --}}
+                            <a href="{{ url('/') }}"><img style="width: 70px" src="{{ asset('site') }}/img/favicon.png"
+                                    alt="Brand"></a>
                         </div>
                     </div>
                     <div class="col-sm-8 text-right">
@@ -123,10 +127,12 @@
                         <p>Promotion, protection et défense des droits des Minorités sexuelles et de genre en
                             particulier des personnes transgenre.</p>
                         <ul class="social-icon">
-                            <li><a href="https://www.facebook.com/profile.php?id=100071841758639"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100071841758639"><i
+                                        class="fa fa-facebook"></i></a></li>
                             <li><a href="https://x.com/CDefendre90002?s=20"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="http://www.pinterest.com/DVCAM237"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="https://instagram.com/defendrecest?igshid=MzNlNGNkZWQ4Mg"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://instagram.com/defendrecest?igshid=MzNlNGNkZWQ4Mg"><i
+                                        class="fa fa-instagram"></i></a></li>
                             {{-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
                         </ul>
                     </div>
