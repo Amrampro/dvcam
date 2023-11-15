@@ -5,7 +5,7 @@
         <div class="container">
             <div class="hero-content">
                 <h4>Joignez-nous aujourd'hui</h4>
-                <h1>Défendre c'est ma vocation</h1>
+                <h1>DEFENDRE c'est ma VOCATION</h1>
                 <p>Une édification psychologique en vue de l’amélioration comportementale <br>et mentale de la jeunesse
                     camerounaise nécessaire à son envol.</p>
                 <a data-scroll href="#start" class="default-btn">Allons-y</a>
