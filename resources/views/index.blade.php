@@ -4,11 +4,10 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h4>Joignez-nous aujourd'hui</h4>
-                <h1>DEFENDRE c'est ma VOCATION</h1>
-                <p>Une édification psychologique en vue de l’amélioration comportementale <br>et mentale de la jeunesse
-                    camerounaise nécessaire à son envol.</p>
-                <a data-scroll href="#start" class="default-btn">Allons-y</a>
+                <h4>{{__("Joignez-nous aujourd'hui")}}</h4>
+                <h1>JEUNES FEMINISTES EN ACTION POUR LES DROITS HUMAINS</h1>
+                <p>{{__("Contribuer a l'amélioration des conditions de vie des féministes en Afrique centrale !")}} <br>{{__("")}}</p>
+                <a data-scroll href="#start" class="default-btn">{{__("Allons-y")}}</a>
             </div>
         </div>
     </section>
@@ -18,134 +17,56 @@
                 <div class="col-md-4 col-sm-6 xs-padding">
                     <div class="promo-content">
                         <img src="{{ asset('site') }}/img/icon-1.png" alt="prmo icon">
-                        <h3>Sensibiliser des vies</h3>
-                        <p>Rendre accessible et expliciter l’intervention psychologique dans la gestion de la vie</p>
+                        <h3>{{__("Sensibiliser des vies")}}</h3>
+                        <p>{{__("sensibilisation et protection des droits des féministes. fournir un soutien juridique aux féministes victimes de discrimination ou de violence, plaider en faveur de lois et politiques favorables aux féministes, sensibiliser le public aux problèmes auxquels les féministes sont confrontées et offrir des services de soutien psychosocial .  jouent également un rôle important dans l'autonomisation des féministes et la promotion de l'égalité des sexes dans tous les aspects de la société.")}}</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 xs-padding">
                     <div class="promo-content">
                         <img src="{{ asset('site') }}/img/icon-2.png" alt="prmo icon">
-                        <h3>Actions Humanitaires</h3>
-                        <p>Contribuer et soutenir les actions humanitaires avec d’autres acteurs philanthropiques</p>
+                        <h3>{{__("Actions Humanitaires")}}</h3>
+                        <p>{{__("Jouer un rôle crucial en veillant à ce que les besoins spécifiques des féministes et des minorités sexuelles et de genre soient pris en compte. Cela inclut la fourniture et où l'accès à de soins de santé reproductive, la protection contre la violence sexiste, l'accès à l'éducation et à des opportunités économiques équitables. Sensibiliser les communautés aux droits des féministes et plaider en faveur de politiques humanitaires qui intègrent une perspective de genre. En outre, être impliquées dans la promotion de la participation significative des féministes dans les processus décisionnels liés à l'aide humanitaire.")}}</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 xs-padding">
                     <div class="promo-content">
                         <img src="{{ asset('site') }}/img/icon-3.png" alt="prmo icon">
-                        <h3>Toucher la population</h3>
-                        <p>Intervenir auprès des populations, des organisations et des institutions</p>
+                        <h3>{{__("Toucher la population")}}</h3>
+                        <p>{{__("Jouer un rôle essentiel dans l'autonomisation des féministes au sein des populations. Organiser des programmes éducatifs pour sensibiliser les féministes à leurs droits, à la santé, à l'autonomisation économique et à la lutte contre la violence basée sur le genre. De plus, mettre en place des initiatives visant à renforcer la participation politique des féministes, à promouvoir l'égalité des sexes et à combattre les stéréotypes de genre préjudiciables. En touchant les populations, nous contribuons à créer des communautés plus inclusives et équitables pour tous.")}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {{-- <section class="causes-section bg-grey bd-bottom padding">
-        <div class="container">
-            <div class="section-heading text-center mb-40">
-                <h2>Recent Causes</h2>
-                <span class="heading-border"></span>
-                <p>Help today because tomorrow you may be the one who <br> needs more helping!</p>
-            </div>
-            <div class="causes-wrap row">
-                <div class="col-md-4 xs-padding">
-                    <div class="causes-content">
-                        <div class="causes-thumb">
-                            <img src="{{ asset('site') }}/img/causes-1.jpg" alt="causes">
-                            <a href="#" class="donate-btn">Donate Now<i class="ti-plus"></i></a>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"><span
-                                        class="wow cssanimation fadeInLeft">25%</span></div>
-                            </div>
-                        </div>
-                        <div class="causes-details">
-                            <h3>First charity activity of this summer.</h3>
-                            <p>Help today because tomorrow you may be the one who needs more helping!</p>
-                            <div class="donation-box">
-                                <p><i class="ti-bar-chart"></i>Goal: $45000</p>
-                                <p><i class="ti-thumb-up"></i>Raised: $5000</p>
-                            </div>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 xs-padding">
-                    <div class="causes-content">
-                        <div class="causes-thumb">
-                            <img src="{{ asset('site') }}/img/causes-2.jpg" alt="causes">
-                            <a href="#" class="donate-btn">Donate Now<i class="ti-plus"></i></a>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"><span
-                                        class="wow cssanimation fadeInLeft">45%</span></div>
-                            </div>
-                        </div>
-                        <div class="causes-details">
-                            <h3>Big charity: build school for poor children.</h3>
-                            <p>Help today because tomorrow you may be the one who needs more helping!</p>
-                            <div class="donation-box">
-                                <p><i class="ti-bar-chart"></i>Goal: $45000</p>
-                                <p><i class="ti-thumb-up"></i>Raised: $5000</p>
-                            </div>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 xs-padding">
-                    <div class="causes-content">
-                        <div class="causes-thumb">
-                            <img src="{{ asset('site') }}/img/causes-3.jpg" alt="causes">
-                            <a href="#" class="donate-btn">Donate Now<i class="ti-plus"></i></a>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25"
-                                    aria-valuemin="0" aria-valuemax="100"><span
-                                        class="wow cssanimation fadeInLeft">75%</span></div>
-                            </div>
-                        </div>
-                        <div class="causes-details">
-                            <h3>Building clean-water system for rural poor.</h3>
-                            <p>Help today because tomorrow you may be the one who needs more helping!</p>
-                            <div class="donation-box">
-                                <p><i class="ti-bar-chart"></i>Goal: $45000</p>
-                                <p><i class="ti-thumb-up"></i>Raised: $5000</p>
-                            </div>
-                            <a href="#" class="read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section class="about-section bd-bottom shape circle padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 xs-padding">
                     <div class="profile-wrap">
-                        <img class="profile" src="{{ asset('site') }}/img/logo.jpg" alt="profile">
-                        <h3>YANGUEU Blondel <span>Président du conseil d'administration</span></h3>
-                        <p>DEFENDRE c’est ma VOCATION est une association à but non lucratif nationale et a base
-                            communautaire qui milite depuis sa création en janvier 2020 pour la promotion,...</p>
+                        <img class="col-md-12" src="{{ asset('site') }}/img/acc1.jpg" alt="profile">
+                        <h3>YANGUEU Blondel <span>{{__("Président du conseil d'administration")}}</span></h3>
+                        <p>JEUNES FEMINISTES EN ACTION POUR LES DROITS HUMAINS {{__(" est une association à but non lucratif sous-régionale et à base communautaire qui milite depuis sa création en janvier 2020 sous son ancien non DEFENDRE c’est ma VOCATION pour la promotion,...")}}</p>
                         <img src="{{ asset('site') }}/img/sign.png" alt="sign">
                     </div>
                 </div>
                 <div class="col-md-8 xs-padding">
                     <div class="about-wrap row">
                         <div class="col-md-6 xs-padding">
-                            <img src="{{ asset('site') }}/img/history.jpg" alt="about-thumb">
+                            <img src="{{ asset('site') }}/img/acc2.jpg" alt="about-thumb">
                             <h3>Notre Vision</h3>
-                            <p>DEFENDRE c’est ma VOCATION rêve d’un monde :
-                                - Dénué de toute forme de Stigmatisation, de discrimination, d’inégalité sociale et
-                                d’au...
+                            <p>JEUNES FEMINISTES EN ACTION POUR LES DROITS HUMAINS {{__("rêve d’un monde")}} :
+                                {{ __("JEUNES FEMINISTES EN ACTION POUR LES DROITS HUMAINS se projette dans un Cameroun ou la transidentité est reconnue et librement vécue...") }}
+                                {{-- - {{__("Dénué de toute forme de Stigmatisation, de discrimination, d’inégalité sociale et d’au...")}} --}}
                             </p>
-                            <a href="{{ url('/about') }}#start" class="default-btn">Lire plus</a>
+                            <a href="{{ url('/about') }}#start" class="default-btn">{{__("Lire plus")}}</a>
                         </div>
                         <div class="col-md-6 xs-padding">
-                            <img src="{{ asset('site') }}/img/mission.jpg" alt="about-thumb">
+                            {{-- <img src="{{ asset('site') }}/img/mission.jpg" alt="about-thumb"> --}}
+                            <img src="{{ asset('site') }}/img/acc3.jpg" alt="about-thumb">
                             <h3>Notre Mission</h3>
-                            <p>DEFENDRE c’est ma VOCATION a pour mission principale de stimuler une réponse globale
-                                efficaces et efficientes aux problèmes de santé au sein des populations les plus à risque...
+                            <p>JEUNES FEMINISTES EN ACTION POUR LES DROITS HUMAINS {{__(" a pour mission de mener des actions de plaidoyer au niveau Régional (Afrique centrale) voir international pour la prise en compte des besoins spécifiques des Féministe en Afrique Centrale")}}
                             </p>
-                            <a href="{{ url('/about') }}#start" class="default-btn">Lire plus</a>
+                            <a href="{{ url('/about') }}#start" class="default-btn">{{__("Lire plus")}}</a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +76,7 @@
     <section class="gallery-section bg-grey bd-bottom padding">
         <div class="container">
             <div class="section-heading col-md-6 xs-padding">
-                <h2 class="text-black">Photos récentes</h2>
+                <h2 class="text-black">{{__("Photos récentes")}}</h2>
                 <span class="heading-border"></span>
             </div>
             <div class="gallery-items row">
@@ -177,9 +98,9 @@
     <section class="team-section bg-grey bd-bottom padding">
         <div class="container">
             <div class="section-heading text-center mb-40">
-                <h2>Rencontrez notre équipe</h2>
+                <h2>{{__("Rencontrez notre équipe")}}</h2>
                 <span class="heading-border"></span>
-                <p>Défendons aujourd'hui car demains, nous pourrions être <br> ceux qui ont besoin de plus d'aide.</p>
+                <p>{{__("Défendons aujourd'hui car demains, nous pourrions être")}} <br> {{__("ceux qui ont besoin de plus d'aide.")}}</p>
             </div>
             <div class="team-wrapper row">
                 <div class="col-lg-12 sm-padding">
@@ -206,28 +127,28 @@
                     <div class="counter-content">
                         <i class="ti-file"></i>
                         <h3 class=""><span class="counter">200</span>+</h3>
-                        <h4 class="text-white">Projets</h4>
+                        <h4 class="text-white">{{__("Projets")}}</h4>
                     </div>
                 </li>
                 <li class="col-md-3 col-sm-6 sm-padding">
                     <div class="counter-content">
                         <i class="ti-face-smile"></i>
                         <h3 class=""><span class="counter">10000</span>+</h3>
-                        <h4 class="text-white">Personnes impactées</h4>
+                        <h4 class="text-white">{{__("Personnes impactées")}}</h4>
                     </div>
                 </li>
                 <li class="col-md-3 col-sm-6 sm-padding">
                     <div class="counter-content">
                         <i class="ti-user"></i>
                         <h3 class="counter">6</h3>
-                        <h4 class="text-white">Partenaires</h4>
+                        <h4 class="text-white">{{__("Partenaires")}}</h4>
                     </div>
                 </li>
                 <li class="col-md-3 col-sm-6 sm-padding">
                     <div class="counter-content">
                         <i class="ti-comments"></i>
                         <h3 class=""><span class="counter">669</span>+</h3>
-                        <h4 class="text-white">Feedbacks Positive</h4>
+                        <h4 class="text-white">{{__("Feedbacks Positive")}}</h4>
                     </div>
                 </li>
             </ul>
@@ -236,97 +157,43 @@
     <section class="testimonial-section bd-bottom padding">
         <div class="container">
             <div class="section-heading text-center mb-40">
-                <h2>Ce que les gens disent</h2>
+                <h2>{{__("Ce que les gens disent")}}</h2>
                 <span class="heading-border"></span>
-                <p>Lisez et soyez édifié par le témoignage des personnes <br> qui ont été touchées par DVCAM</p>
+                <p>{{__("Lisez et soyez édifié par le témoignage des personnes qui ont été touchées par JEFADH")}}</p>
             </div>
             <div id="testimonial-carousel" class="testimonial-carousel owl-carousel">
                 <div class="testimonial-item">
-                    <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in
-                        the lives of the poor, the abused and the helpless.</p>
+                    <p>En tant que membre active de la communauté LGBTIQ+ au Cameroun, je suis reconnaissant pour le travail inestimable accompli par JEFADH au quotidien en faveur des droits humains et des féministes. Leur engagement indéfectible et leurs actions concrètes à un impact significatif dans notre société. Leur détermination à promouvoir l'égalité des gens, à défendre les droits des féministes et à lutter contre les injustices est une source d'inspiration pour nous tousEs. Je suis fier de soutenir cette organisation et je continuerai à la recommander vivement.</p>
                     <div class="testi-footer">
                         <img src="{{ asset('site') }}/img/team-1.jpg" alt="profile">
-                        <h4>Jonathan Smith <span>Chef de mission</span></h4>
+                        <h4>Activistes/ leadErs communautaire trans - femme, région de l'ouest Cameroun <span></span></h4>
                     </div>
                 </div>
                 <div class="testimonial-item">
-                    <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in
-                        the lives of the poor, the abused and the helpless.</p>
+                    <p>En tant que bénéficiaires des actions de JEFADH ancien DÉFENDRE c'est ma VOCATION, nous sommes profondément reconnaissant pour le soutien et l'impact positif qu'ils ont eu et ont dans nos vies. Leur travail a apporté et continue d'apporter des changements concrets et significatifs, et nous  sommes fier de faire partie de cette communauté. Leur engagement envers l'égalité et la justice est une véritable source d'inspiration pour nous et pour tant d'autres. Leur travail est essentiel et mérite tout notre soutien.</p>
                     <div class="testi-footer">
                         <img src="{{ asset('site') }}/img/team-2.jpg" alt="profile">
-                        <h4>Angelina Rose <span>Animateur</span></h4>
+                        <h4>Nous, bénéficiaires de JEFADH ancien DÉFENDRE c'est ma VOCATION Cameroun, région de l'ouest Cameroun <span></span></h4>
                     </div>
                 </div>
                 <div class="testimonial-item">
-                    <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in
-                        the lives of the poor, the abused and the helpless.</p>
+                    <p>En tant qu'alliés de JEUNES FÉMINISTES EN ACTION POUR LES DROITS HUMAINS ancien DEFENDRE c'est ma VOCATION pour la promotion, la protection et la défense  des droits humains des féministes, nous sommes fiers de soutenir leur travail exceptionnel en faveur de l'égalité des gens, de la justice sociale et des droits des Femmes. Leur engagement indéfectible et leurs actions concrètes sont une source d'inspiration pour nous tous. Nous continuerons à travailler en étroite collaboration avec eux pour promouvoir un changement positif dans notre société et pour faire avancer la cause des droits humains des féministes en Afrique centrale.</p>
                     <div class="testi-footer">
                         <img src="{{ asset('site') }}/img/team-3.jpg" alt="profile">
-                        <h4>Taylor Swift <span>Logisticien humanitaire</span></h4>
+                        <h4>Les alliéEs de JEFADH <span></span></h4>
                     </div>
                 </div>
-                <div class="testimonial-item">
+                <!-- <div class="testimonial-item">
                     <p>The secret to happiness lies in helping others. Never underestimate the difference YOU can make in
                         the lives of the poor, the abused and the helpless.</p>
                     <div class="testi-footer">
                         <img src="{{ asset('site') }}/img/team-4.jpg" alt="profile">
                         <h4>Michel Brown <span>Responsable géographique</span></h4>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
-    {{-- <section class="blog-section bg-grey bd-bottom padding">
-        <div class="container">
-            <div class="section-heading text-center mb-40">
-                <h2>Recent Stories</h2>
-                <span class="heading-border"></span>
-                <p>Help today because tomorrow you may be the one who <br> needs more helping!</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 xs-padding">
-                    <div class="blog-items grid-list row">
-                        <div class="col-md-4 padding-15">
-                            <div class="blog-post">
-                                <img src="{{ asset('site') }}/img/home-blog-1.jpg" alt="blog post">
-                                <div class="blog-content">
-                                    <span class="date"><i class="fa fa-clock-o"></i> January 01.2021</span>
-                                    <h3><a href="#">The History of Donation Told</a></h3>
-                                    <p>The secret to happiness lies in helping others. Never underestimate the difference
-                                        YOU can make in the lives of the poor, the abused and the helpless.</p>
-                                    <a href="#" class="post-meta">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 padding-15">
-                            <div class="blog-post">
-                                <img src="{{ asset('site') }}/img/home-blog-2.jpg" alt="blog post">
-                                <div class="blog-content">
-                                    <span class="date"><i class="fa fa-clock-o"></i> January 01.2021</span>
-                                    <h3><a href="#">Help the Comunity</a></h3>
-                                    <p>The secret to happiness lies in helping others. Never underestimate the difference
-                                        YOU can make in the lives of the poor, the abused and the helpless.</p>
-                                    <a href="#" class="post-meta">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 padding-15">
-                            <div class="blog-post">
-                                <img src="{{ asset('site') }}/img/home-blog-3.jpg" alt="blog post">
-                                <div class="blog-content">
-                                    <span class="date"><i class="fa fa-clock-o"></i> January 01.2021</span>
-                                    <h3><a href="#">Charity Ever Rule the World?</a></h3>
-                                    <p>The secret to happiness lies in helping others. Never underestimate the difference
-                                        YOU can make in the lives of the poor, the abused and the helpless.</p>
-                                    <a href="#" class="post-meta">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <div class="sponsor-section bd-bottom">
         <div class="container">
             <ul id="sponsor-carousel" class="sponsor-items owl-carousel">

@@ -4,7 +4,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h2 class="pb-lg">Mes Thérapies</h2>
+            <h2 class="pb-lg">Toutes les Thérapies</h2>
             <div class="toggle" data-plugin-toggle>
                 @foreach ($theraps as $therap)
                     <section class="toggle">

@@ -20,6 +20,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Image</th>
+                                <th>Description</th>
                                 <th>Posté Le</th>
                                 <th>Actions</th>
                             </tr>
@@ -31,6 +32,7 @@
                                     <td><img width="100px" height="100px"
                                             src="{{ asset('storage/gallery' . '/' . $gallery->image) }}" alt="">
                                     </td>
+                                    <td>{{ $gallery->description }}</td>
                                     <td>{{ $gallery->created_at }}</td>
                                     <td class="actions">
                                         {{-- <a href=""><i class="fa fa-pencil"></i></a> --}}

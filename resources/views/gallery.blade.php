@@ -28,8 +28,10 @@
                     <div class="col-lg-4 col-sm-6 single-item branding design">
                         <div class="gallery-wrap">
                             <img src="{{ asset('storage/gallery' . '/' . $gallery->image) }}" alt="gallery">
+                            <p>Description : {{ $gallery->description }}</p>
                             <div class="hover">
-                                <a class="img-popup" data-gall="galleryimg" href="{{ asset('storage/gallery' . '/' . $gallery->image) }}"><i
+                                <a class="img-popup" data-gall="galleryimg"
+                                    href="{{ asset('storage/gallery' . '/' . $gallery->image) }}"><i
                                         class="ti-image"></i></a>
                             </div>
                         </div>

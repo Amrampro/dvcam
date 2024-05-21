@@ -71,24 +71,26 @@
                     <div class="col-sm-4">
                         <div class="site-branding">
                             {{-- <a href="#"><img src="{{ asset('site') }}/img/logo.png" alt="Brand"></a> --}}
-                            <a href="{{ url('/') }}"><img style="width: 70px" src="{{ asset('site') }}/img/favicon.png"
-                                    alt="Brand"></a>
+                            <a href="{{ url('/') }}"><img style="width: 70px"
+                                    src="{{ asset('site') }}/img/favicon.png" alt="Brand"></a>
                         </div>
                     </div>
                     <div class="col-sm-8 text-right">
                         <?php $lang = LaravelLocalization::getCurrentLocale(); ?>
                         <ul id="mainmenu" class="nav navbar-nav nav-menu">
                             <li><a class="{{ '/' . $lang == request()->path() ? 'active' : '' }}"
-                                    href="{{ url('/') }}">Accueil</a></li>
+                                    href="{{ url('/') }}">{{ __('Accueil') }}</a></li>
                             <li><a class="{{ $lang . '/about' == request()->path() ? 'active' : '' }}"
-                                    href="{{ url('/about') }}">A propos</a></li>
+                                    href="{{ url('/about') }}">{{ __('A propos') }}</a></li>
                             <li><a class="{{ $lang . '/gallery' == request()->path() ? 'active' : '' }}"
-                                    href="{{ url('/gallery') }}">Gallerie</a></li>
+                                    href="{{ url('/gallery') }}">{{ __('Gallerie') }}</a></li>
+                            <li><a class="{{ $lang . '/blog' == request()->path() ? 'active' : '' }}"
+                                    href="{{ url('/blog') }}">{{ __('Blog') }}</a></li>
                             <li><a class="{{ $lang . '/contact' == request()->path() ? 'active' : '' }}"
                                     href="{{ url('/contact') }}">Contact</a></li>
                             <li>
                                 @if (auth())
-                                    <a href="{{ url('/apk/index') }}">Signaler une Violence</a>
+                                    <a href="{{ url('/apk/index') }}">{{ __('Signaler une Violence') }}</a>
                                 @endif
                             </li>
                             <li>
@@ -124,8 +126,8 @@
                 <div class="col-md-4 xs-padding">
                     <div class="widget-content">
                         <img src="{{ asset('site') }}/img/logo-light.png" alt="logo">
-                        <p>Promotion, protection et défense des droits des Minorités sexuelles et de genre en
-                            particulier des personnes transgenre.</p>
+                        <p>{{ __('Promotion, protection et défense des droits des Minorités sexuelles et de genre en particulier des personnes transgenre.') }}
+                        </p>
                         <ul class="social-icon">
                             <li><a href="https://www.facebook.com/profile.php?id=100071841758639"><i
                                         class="fa fa-facebook"></i></a></li>
@@ -141,10 +143,10 @@
                     <div class="widget-content">
                         <h3>Liens utils</h3>
                         <ul class="widget-link">
-                            <li><a href="{{ url('/apk/index') }}">Signaler une Violence</a>
+                            <li><a href="{{ url('/apk/index') }}">{{ __('Signaler une Violence') }}</a>
                             </li>
-                            <li><a href="{{ url('/gallery') }}">Gallerie</li>
-                            <li><a href="{{ url('/about') }}">A propos</a>
+                            <li><a href="{{ url('/gallery') }}">{{ __('Gallerie') }}</li>
+                            <li><a href="{{ url('/about') }}">{{ __('A propos') }}</a>
                             </li>
                             <li><a href="{{ url('/contact') }}">Contact</a>
                             </li>
@@ -153,7 +155,7 @@
                 </div>
                 <div class="col-md-4 xs-padding">
                     <div class="widget-content">
-                        <h3>Plus d'infos</h3>
+                        <h3>{{ __("Plus d'infos") }}</h3>
                         <ul class="address">
                             <li> <a href="mailto:defendrec39estmavocation.dvcam@gmail.com"><i
                                         class="ti-email"></i><span>defendrec39estmavocation.dvcam@gmail.com</span></a>

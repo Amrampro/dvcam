@@ -10,7 +10,7 @@
 
             <h2 class="panel-title">Demandes de refuges</h2>
         </header>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow: scroll">
             <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                 <thead>
                     <tr>
@@ -33,14 +33,14 @@
                     @foreach ($refuges as $index => $refuge)
                         <tr class="gradeX">
                             <td>{{ $index + 1 }}</td>
+                            <td>{{ $refuge->created_at }}</td>
                             <th>
                                 @foreach ($users as $user)
-                                    @if ($user->id = $refuge->user_id)
+                                    @if ($user->id == $refuge->user_id)
                                         {{ '@' . $user->name }}
                                     @endif
                                 @endforeach
                             </th>
-                            <td>{{ $refuge->created_at }}</td>
                             <td>{{ $refuge->adult }}</td>
                             <td>{{ $refuge->sleeping_at }}</td>
                             <td>{{ $refuge->gender }}</td>
@@ -54,6 +54,7 @@
                                 <a href="{{ url('refuge/' . $refuge->id . '/' . ($page = 'single' . '/del')) }}"
                                     onclick="return confirm('Voulez-vous vraiment supprimer ?')"
                                     class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                    <a href="{{ url('refuge/edit/'.$refuge->id) }}"><i class="fa fa-pencil"></i></a>
                             </td>
                         </tr>
                     @endforeach

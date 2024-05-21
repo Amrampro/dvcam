@@ -55,7 +55,7 @@
                             <div class="widget-summary-col widget-summary-col-icon">
                                 <div class="summary-icon bg-primary">
                                     <strong
-                                            class="amount">{{ $count = $users->where('region_id', $region->id)->count() }}</strong>
+                                            class="amount">{{ $count = $alerts->where('region', $region->id)->count() }}</strong>
                                     {{-- <i class="fa fa-user"></i> --}}
                                 </div>
                             </div>

@@ -41,6 +41,8 @@ Route::group([
 		Route::get("/apk/alerts/all", [ApkController::class, "alerts_all"]);
 		Route::get("/apk/alerts/me", [ApkController::class, "alerts_me"]);
 		Route::get("/apk/alerts/add", [ApkController::class, "alerts_add"]);
+		Route::get("/apk/alerts/edit/{id}", [ApkController::class, "alerts_edit"]);
+		Route::POST("/alert/edit/{id}/update", [ApkController::class, "alert_update"]);
 		Route::POST("alert/add", [ApkController::class, "alert_add"]);
 
 		Route::get("/apk/therapy/all", [ApkController::class, "therapy_all"]);
@@ -58,13 +60,17 @@ Route::group([
 		Route::get("/apk/askref/me", [ApkController::class, "askref_me"]);
 		Route::get("/apk/askref/add", [ApkController::class, "askref_add"]);
 		Route::get('refuge/{id}/{page}/del', [ApkController::class, "refuge_del"]);
+		Route::get('refuge/edit/{id}', [ApkController::class, "askref_edit"]);
+		Route::POST('askref/edit/{id}/update', [ApkController::class, "askref_update"]);
 		Route::POST("askref/add", [ApkController::class, "askref_add_post"]);
 
 		Route::get("/apk/enquetes/all", [ApkController::class, "enquetes_all"]);
 		Route::get("/apk/enquetes/me", [ApkController::class, "enquetes_me"]);
 		Route::get("/apk/enquetes/add", [ApkController::class, "enquetes_add"]);
 		Route::get('enquete/single/{id}', [ApkController::class, "enquete_single"]);
+		Route::get('enquete/edit/{id}', [ApkController::class, "enquete_edit"]);
 		Route::get('enquetes/{id}/{page}/del', [ApkController::class, "enquetes_del"]);
+		Route::POST("enquete/edit/{id}/update", [ApkController::class, "enquetes_update"]);
 		Route::POST("enquetes/add", [ApkController::class, "enquetes_add_post"]);
 
 		Route::get("apk/users", [ApkController::class, "users_see"]);
@@ -82,6 +88,9 @@ Route::group([
 		Route::get("/apk/gallery/add", [ApkController::class, "galleries_add"]);
 		Route::POST("gallery/add", [ApkController::class, "gallery_add"]);
 		Route::get("gallery/{id}/del", [ApkController::class, "gallery_del"]);
+
+		Route::get("/apk/pdf", [ApkController::class, "document"]);
+		Route::POST("/apk/getpdf", [ApkController::class, "generatePDF"]);
 	});
 
 	// Home
@@ -90,6 +99,10 @@ Route::group([
 	Route::get('/about', [HomeController::class, "about"])->name("about");
 
 	Route::get("/gallery", [HomeController::class, "gallery"])->name("gallery");
+
+	Route::get("/blog", [HomeController::class, "blog"])->name("blog");
+
+	Route::get("blog/detail/{id}", [HomeController::class, "blog_detail"])->name("blog_detail");
 
 	Route::get("/contact", [HomeController::class, "contact"])->name("contact");
 

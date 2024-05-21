@@ -16,7 +16,7 @@
 
                     <h2 class="panel-title">
                         @foreach ($users as $user)
-                            @if ($user->id = $post->user_id)
+                            @if ($user->id == $post->user_id)
                                 <i class="">Par:
                                     {{ '@' . $user->name }}</i>
                             @endif

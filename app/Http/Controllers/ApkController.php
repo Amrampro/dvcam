@@ -17,6 +17,7 @@ use App\Models\Regions;
 use App\Models\Team;
 use App\Models\Gallery;
 
+use PDF;
 class ApkController extends Controller
 {
 
@@ -24,11 +25,13 @@ class ApkController extends Controller
     {
         $users = User::All();
         $regions = Regions::All();
+        $alerts = Alerts::All();
         $tUsers = count($users);
         return view('user.index', [
             'tUsers' => $tUsers,
             'users' => $users,
-            'regions' => $regions
+            'regions' => $regions,
+            'alerts' => $alerts
         ]);
     }
 
@@ -58,27 +61,79 @@ class ApkController extends Controller
 
     public function alerts_me()
     {
+        $regions = Regions::All();
         $user_id = auth()->user()->id;
         $alerts = Alerts::where("user_id", $user_id)->get();
         return view('user.alerts.me', [
-            'alerts' => $alerts
+            'alerts' => $alerts,
+            'regions'=>$regions
         ]);
     }
 
     public function alerts_all()
     {
+        $regions = Regions::All();
         $alerts = Alerts::orderBy('id', 'desc')->get();
         $users = User::All();
         return view('user.alerts.all', [
             'alerts' => $alerts,
-            'users' => $users
+            'users' => $users,
+            'regions'=>$regions
         ]);
     }
 
     public function alerts_add()
     {
-        return view('user.alerts.add');
+        $regions = Regions::All();
+        return view('user.alerts.add', ['regions'=>$regions]);
     }
+
+    public function alerts_edit($id){
+        $regions = Regions::All();
+        $alert = Alerts::find($id);
+        $users = User::All();
+        return view('user.alerts.edit', [
+            'alert' => $alert,
+            'users' => $users,
+            'regions'=>$regions
+        ]);
+    }
+
+    public function alert_update(Request $request, $id)
+{
+    $request->validate([
+        'level' => 'required',
+        'place' => 'required',
+        'author' => 'required',
+        'type' => 'required',
+        'description' => 'required'
+    ]);
+
+    // Fetch the alert you want to update
+    $alert = Alerts::find($id);
+
+    if (!$alert) {
+        return redirect('apk/alerts')->with('error', 'Alert not found');
+    }
+
+    // Update the fields
+    $alert->level = $request->level;
+    $alert->region = $request->region;
+    $alert->place = $request->place;
+    $alert->type = $request->type;
+    $alert->author = $request->author;
+    $alert->description = $request->description;
+
+    // Save the changes
+    $save = $alert->save();
+
+    if ($save) {
+        return redirect('apk/alerts/edit/'.$id)->with('success', 'Alert updated successfully');
+    } else {
+        return redirect('apk/alerts/edit/'.$id)->with('error', 'Failed to update alert');
+    }
+}
+
 
     public function alert_add(Request $request)
     {
@@ -93,6 +148,7 @@ class ApkController extends Controller
 
         $alerts = new Alerts;
         $alerts->user_id = $user_id;
+        $alerts->region = $request->region;
         $alerts->level = $request->level;
         $alerts->place = $request->place;
         $alerts->type = $request->type;
@@ -110,7 +166,7 @@ class ApkController extends Controller
     {
         $theraps = therapy::orderBy('id', 'desc')->get();
         $users = User::All();
-        return view('user.alerts.all', [
+        return view('user.therapy.all', [
             'theraps' => $theraps,
             'users' => $users
         ]);
@@ -280,6 +336,62 @@ class ApkController extends Controller
         return view('user.askref.add');
     }
 
+    public function askref_edit($id){
+        $refuge = Refuge::find($id);
+        $users = User::All();
+        return view('user.askref.edit', [
+            'refuge' => $refuge,
+            'users' => $users
+        ]);
+    }
+
+    public function askref_update(Request $request, $id)
+{
+    $user_id = auth()->user()->id;
+    
+    $request->validate([
+        'adult' => 'required',
+        'sleeping_at' => 'required',
+        'gender' => 'required',
+        'employment' => 'required',
+        'income' => 'required',
+        'trained' => 'required',
+        'training_time' => 'required',
+        'apport' => 'required'
+    ]);
+
+    $training = $request->training ? $request->training : 'N/A';
+
+    // Fetch the askref record you want to update
+    $refuge = Refuge::find($id);
+
+    if (!$refuge) {
+        return redirect('apk/askref/add')->with('error', 'Refuge record not found');
+    }
+
+    // Update the fields
+    $refuge->user_id = $user_id;
+    $refuge->adult = $request->adult;
+    $refuge->sleeping_at = $request->sleeping_at;
+    $refuge->gender = $request->gender;
+    $refuge->employment = $request->employment;
+    $refuge->income = $request->income;
+    $refuge->trained = $request->trained;
+    $refuge->training = $training;
+    $refuge->training_time = $request->training_time;
+    $refuge->apport = $request->apport;
+
+    // Save the changes
+    $save = $refuge->save();
+
+    if ($save) {
+        return redirect('refuge/edit/'.$id)->with('success', 'Refuge record updated successfully');
+    } else {
+        return redirect('refuge/edit/'.$id)->with('error', 'Failed to update refuge record');
+    }
+}
+
+
     public function askref_add_post(Request $request)
     {
         $user_id = auth()->user()->id;
@@ -349,7 +461,8 @@ class ApkController extends Controller
 
     public function enquetes_all()
     {
-        $enquetes = Enquete::orderBy('id', 'desc')->get();
+        // $enquetes = Enquete::orderBy('id', 'desc')->get();
+        $enquetes = Enquete::orderBy('date_cover', 'asc')->get();
         $users = User::All();
         return view('user.enquetes.all', [
             'enquetes' => $enquetes,
@@ -382,6 +495,76 @@ class ApkController extends Controller
         ]);
     }
 
+    public function enquete_edit($id){
+        $enquete = Enquete::find($id);
+        return view('user.enquetes.edit', [
+            'enquete' => $enquete
+        ]);
+    }
+
+    public function enquetes_update(Request $request, $id)
+{
+    
+    $request->validate([
+        'details' => 'required',
+        'thing_done' => 'required',
+        'thought' => 'required',
+        'waiting' => 'required',
+        'thing_to_be_done' => 'required',
+        'recieved_service' => 'required',
+        'thought_service' => 'required',
+        'thought_survivor' => 'required',
+    ]);
+
+    // Fetch the enquête you want to update
+    $post = Enquete::find($id);
+
+    if (!$post) {
+        return redirect('/apk/enquetes')->with('error', 'Enquête not found');
+    }
+
+    // Update the fields
+    $post->code = $request->code;
+        $post->date_cover = $request->date_cover;
+        $post->violence_type = $request->violence_type;
+        $post->nature = $request->nature;
+        $post->identity = $request->identity;
+        $post->orientation = $request->orientation;
+        $post->age = $request->age;
+        $post->let = $request->let;
+        $post->occupation = $request->occupation;
+        $post->country = $request->country;
+        $post->town = $request->town;
+        $post->quater = $request->quater;
+        $post->date_incident = $request->date_incident;
+        $post->place_incident = $request->place_incident;
+        $post->source = $request->source;
+        $post->collect_mode = $request->collect_mode;
+        $post->passing_state = $request->passing_state;
+        $post->author = $request->author;
+        $post->refered_for = $request->refered_for;
+        $post->organisation = $request->organisation;
+        $post->details = $request->details;
+        $post->thing_done = $request->thing_done;
+        $post->thought = $request->thought;
+        $post->waiting = $request->waiting;
+        $post->thing_to_be_done = $request->thing_to_be_done;
+        $post->recieved_service = $request->recieved_service;
+        $post->thought_service = $request->thought_service;
+        $post->thought_survivor = $request->thought_survivor;
+    // Update other fields similarly
+
+    // Save the changes
+    $save = $post->save();
+
+    if ($save) {
+        return redirect('enquete/edit/'.$id)->with('success', 'Enquête updated successfully');
+    } else {
+        return redirect('enquete/edit/'.$id)->with('error', 'Failed to update enquête');
+    }
+}
+
+
     public function enquetes_add_post(Request $request)
     {
         $code = Str::random(10);
@@ -399,7 +582,7 @@ class ApkController extends Controller
 
         $post = new Enquete;
         $post->user_id = $user_id;
-        $post->code = $code;
+        $post->code = $request->code;
         $post->date_cover = $request->date_cover;
         $post->violence_type = $request->violence_type;
         $post->nature = $request->nature;
@@ -528,7 +711,8 @@ class ApkController extends Controller
     public function gallery_add(Request $request)
     {
         $request->validate([
-            'post_image' => 'required'
+            'post_image' => 'required',
+            'description' => 'required',
         ]);
         $new_string = bin2hex(random_bytes(10));
 
@@ -545,6 +729,7 @@ class ApkController extends Controller
 
         $posts = new Gallery;
         $posts->image = $reFullImage;
+        $posts->description = $request->description;
         $save = $posts->save();
 
         if ($save)
@@ -604,5 +789,34 @@ class ApkController extends Controller
     {
         $team = Team::where('id', $id)->delete();
         return redirect('apk/team')->with('success', 'Collaborateur supprimé !.');
+    }
+
+    public function document(){
+        return view('user.document');
+    }
+
+    public function generatePDF(Request $request)
+    {
+        $request->validate([
+            'datatype' => 'required',
+        ]);
+        $datatype = $request->datatype;
+        $users = User::all();
+
+        if ($datatype == "Enquete"){
+            $datas = Enquete::orderBy('id', 'desc')->get();
+            return view('user.pdf', ["datas" => $datas, "users" => $users]);
+        } else if ($datatype == "Alertes"){
+            $datas = Alerts::orderBy('id', 'desc')->get();
+            return view('user.pdf_alerts', ["datas" => $datas, "users" => $users]);
+        } else if ($datatype == "Therapy"){
+            $datas = Therapy::orderBy('id', 'desc')->get();
+            return view('user.pdf_theraps', ["datas" => $datas, "users" => $users]);
+        } else if ($datatype == "askref"){
+            $datas = Refuge::orderBy('id', 'desc')->get();
+            return view('user.pdf_refuge', ["datas" => $datas, "users" => $users]);
+        }
+        // $pdf = PDF::loadView('user.pdf', ["datas" => $datas, "users" => $users]);
+        // return $pdf->download('sample.pdf');
     }
 }

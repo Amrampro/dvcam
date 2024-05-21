@@ -12,6 +12,13 @@
                         <div class="toggle-content">
                             <p>Niveau d'alert: {{ $alert->level }}</p>
                             <p>Lieu d'alert: {{ $alert->place }}</p>
+                            <p>Region :
+                                @foreach ($regions as $region)
+                                    @if ($alert->region == $region->id)
+                                        {{ $region->name }}
+                                    @endif
+                                @endforeach
+                            </p>
                             <p>Type d'alert: {{ $alert->type }}</p>
                             <p>Auteur de l'alert: {{ $alert->author }}</p>
                             <p>Description: {{ $alert->description }}</p>

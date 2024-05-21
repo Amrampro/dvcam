@@ -292,6 +292,12 @@
                                             <span>Gallerie</span>
                                         </a>
                                     </li>
+                                    <li class="nav-active">
+                                        <a href="{{ url('apk/pdf') }}">
+                                            <i class="fa fa-download" aria-hidden="true"></i>
+                                            <span>Télécharger</span>
+                                        </a>
+                                    </li>
                                 @endif
                                 <li class="nav-active">
                                     <a href="{{ url('apk/my_account') }}">

@@ -6,11 +6,13 @@ use App\Models\Event;
 use App\Models\Property;
 use App\Models\PropertyValue;
 use App\Models\Sermon;
+use App\Models\Post;
 use App\Models\Testimony;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use  App\Models\Team;
 use App\Models\Gallery;
+use PDF;
 
 class HomeController extends Controller
 {
@@ -33,6 +35,16 @@ class HomeController extends Controller
     // Route contacts
     function contact(){
         return view("contact");
+    }
+
+    function blog(){
+        $posts = Post::orderBy('id', 'desc')->get();
+        return view("blog", ["posts" => $posts]);
+    }
+
+    function blog_detail($id){
+        $post = Post::find($id);
+        return view("blog_details",["post" => $post]);
     }
 
     // Route about

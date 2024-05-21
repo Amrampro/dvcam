@@ -208,16 +208,16 @@
                                         <label class="col-sm-3 control-label" for="">Auteur de la violence</label>
                                         <div class="col-sm-9">
                                             <select name="author" id="" class="form-control">
-                                                <option value="">Inconnu</option>
-                                                <option value="">Membre de la famille</option>
-                                                <option value="">LGBTIQ+</option>
-                                                <option value="">Internaute</option>
-                                                <option value="">FMO</option>
-                                                <option value="">Bailleur(resse)</option>
-                                                <option value="">Employeur(e)</option>
-                                                <option value="">Prestataire santé</option>
-                                                <option value="">Prestataire service</option>
-                                                <option value="">Homme/Femme religieux(se)</option>
+                                                <option value="Inconnu">Inconnu</option>
+                                                <option value="Membre de la famille">Membre de la famille</option>
+                                                <option value="LGBTIQ+">LGBTIQ+</option>
+                                                <option value="Internaute">Internaute</option>
+                                                <option value="FMO">FMO</option>
+                                                <option value="Bailleur(resse)">Bailleur(resse)</option>
+                                                <option value="Employeur(e)">Employeur(e)</option>
+                                                <option value="Prestataire santé">Prestataire santé</option>
+                                                <option value="Prestataire service">Prestataire service</option>
+                                                <option value="Homme/Femme religieux(se)">Homme/Femme religieux(se)</option>
                                             </select>
                                         </div>
                                     </div>

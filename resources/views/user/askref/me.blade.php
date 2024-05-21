@@ -10,7 +10,7 @@
 
             <h2 class="panel-title">Mes demandes</h2>
         </header>
-        <div class="panel-body">
+        <div class="panel-body" style="overflow: scroll">
             <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                 <thead>
                     <tr>

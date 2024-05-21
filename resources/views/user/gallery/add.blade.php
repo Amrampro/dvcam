@@ -45,6 +45,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Description de l'image</label>
+                        <div class="col-md-12">
+                            <input name="description" type="text" class="form-control" placeholder="(Utilisez la session blog pour les longues descriptions)">
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <input type="submit" class="btn btn-info" id="inputDefault" value="Envoyer">
                     </div>
